@@ -1,0 +1,20 @@
+#install.packages("leaflet")
+library(leaflet) 
+
+
+m <- leaflet()
+m <- addTiles(m)
+m <- addMarkers(m, lng= -71.07339, lat= 42.06040, popup=("1.1 Start"))
+m <- addMarkers(m, lng= -71.07323, lat= 42.06000, popup=("1.1 Stop"))
+m <- addMarkers(m, lng= -71.07314, lat= 42.06010, popup=("1.2 Start"))
+m <- addMarkers(m, lng= -71.07298, lat=  42.05999, popup=("1.2 Stop"))
+m <- addMarkers(m, lng= -71.07298, lat= 42.06015, popup=("1.3 Start"))
+m <- addMarkers(m, lng= -71.07370, lat= 42.05993, popup=("1.3 Stop")) 
+m <- addMarkers(m, lng=  -71.08314, lat= 42.06235, popup=("2.1 Start"))
+m <- addMarkers(m, lng= -71.08329, lat= 42.06207, popup=("2.1 Stop"))
+m <- addMarkers(m, lng= -71.08369, lat= 42.06219 , popup=("2.2 Start")) 
+m <- addMarkers(m, lng= -71.08376, lat= 42.06230, popup=("2.2 Stop")) 
+m <- addMarkers(m, lng= -71.08308, lat= 42.06245, popup=("2.3 Start")) 
+m <- addMarkers(m, lng= -71.08289, lat= 42.06248, popup=("2.3 Stop")) 
+m 
+ addPolylines(lng1= -71.08308, lat1= 42.06245, lng2= -71.08289, lat2= 42.06248, group = 2.3, color = "red")
