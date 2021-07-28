@@ -9,7 +9,7 @@ ggplot
 Transect.Data <- read_sheet("https://docs.google.com/spreadsheets/d/1sXHH3RDfTKkUuPrfB0o5VAX5_1jq8DCiG-znIFkmX58/edit#gid=0")
 ggplot(Transect.Data)+
 geom_col(aes(x= ScientificName, y= CarbonContentinTons)) +
- theme(axis.text.x= element_text(angle=45, vjust= 1.1, hjust=1.1 )) +
+ theme(axis.text.x= element_text(angle=30, vjust= 1.1, hjust=1.1 )) +
   ylab("Carbon Content in Tons")+ 
   facet_wrap(~Transect, scales='free_x')
 ggsave("Transect.Weight.png", height= 5, width= 8, dpi = 400)
