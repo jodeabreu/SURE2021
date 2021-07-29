@@ -5,8 +5,10 @@ library(dplyr)
 library(rphylopic)
 stonehill <- get_inat_obs(place_id=91152, maxresults = 4000)
 head(stonehill)
- ggplot(stonehill_tax %>% filter(quality_grade != 'needs_id') %>% filter(phylum== "Chordata"))+
+
+Chordate.Orders= ggplot(stonehill_tax %>% filter(quality_grade != 'needs_id') %>% filter(phylum== "Chordata"))+
   geom_bar(aes(x=order)) +
+  theme_light()+
   facet_wrap(~kingdom, scales='free_x') +
   theme(axis.text.x= element_text(angle=50, vjust= 1, hjust=1.1 )) + 
   add_phylopic(Passeriformes, alpha = 1, x = 15, y = 175, ysize = 20, color = "black") + 
@@ -17,11 +19,12 @@ add_phylopic(Perciformes, alpha = 1, x = 17, y = 55, ysize = 15, color = "black"
   add_phylopic(Anura, alpha= 1, x= 2.8, y= 30, ysize=15, color= "black") + 
   add_phylopic(WhitetailedDeer, alpha= 1, x=4, y=30, ysize=20, color = "black")+
   ylab("Number of Observations") +
-   ylim(0,180)+
+   ylim(0,180)
+
   ggtitle("Chordates")+
   theme(plot.title= element_text(hjust = .5))
   
-ggsave("Chordate_Orders.png", height= 5, width= 8, dpi = 400)
+ggsave("Chordate.Orders.png", height= 5, width= 8, dpi = 400)
 
 Passeriformes <-image_data("be358482-58c7-4ea8-a5ce-e3ef9f4d0db4", size = 64) [[1]]
 Anseriforme <-image_data("b677ec7b-a2ef-46be-9d78-a997a88e1a9c", size= 64)[[1]]

@@ -9,11 +9,11 @@ phylum_sp_summ <- stonehill_tax %>%
 species.richness<- ggplot(phylum_sp_summ) +
   geom_col(aes(x=phylum, y=count))+
   theme_light()+
-theme(axis.text.x= element_text(angle=50, vjust= 1, hjust=1.2 ))+
- ylab("Number of Species") +
+  theme(axis.text.x= element_text(angle=50, vjust= 1, hjust=1.2 ))+
+  ylab("Number of Species") +
   add_phylopic(Bryophyta, alpha = 1, x = 4, y = 25, ysize = 35, color = "green4")+
   add_phylopic(Ascomycota, alpha = 1, x = 2, y = 25, ysize = 30, color = "orange")+
-add_phylopic(Basidomycota, alpha = 1, x = 3, y = 25, ysize = 35, color = "red")+
+  add_phylopic(Basidomycota, alpha = 1, x = 3, y = 25, ysize = 35, color = "red")+
   add_phylopic(Tracheophyta, alpha = 1, x = 7, y = 170, ysize = 35, color = "green")+
   add_phylopic(Arthropods, alpha = 1, x = 1, y = 140, ysize = 25, color = "yellow")+
   add_phylopic(Chordata, alpha = 1, x = 5, y = 105, ysize = 10, color = "red")+
@@ -22,6 +22,8 @@ add_phylopic(Basidomycota, alpha = 1, x = 3, y = 25, ysize = 35, color = "red")+
   ggtitle("Species Richness")+
   theme(plot.title= element_text(hjust = .5))
 species.richness
+
+ggsave("Species.richness.png", height= 5, width= 8, dpi = 400)
 
 print(phylum_sp_summ)
 

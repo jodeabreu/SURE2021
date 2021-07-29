@@ -57,9 +57,9 @@ Plant_phylums= ggplot(stonehill_tax %>% filter(quality_grade != 'needs_id') %>% 
   
 
 finalplot = Animal_phylums+Fungus_phylums+Plant_phylums 
-finalplot
+Animalia.Plantae.Fungi= finalplot
 
-ggsave("Animal_Fungi_Plant.png", finalplot, height= 5, width= 8, dpi = 400)
+ggsave("Animal.Fungi.Plant.png", finalplot, height= 5, width= 8, dpi = 400)
 
 
 Ascomycota <-image_data("a21310f5-2762-495d-b996-bc0bef7203fd", size= 64)[[1]] 
