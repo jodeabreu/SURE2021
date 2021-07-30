@@ -24,8 +24,6 @@ add_phylopic(Ascomycota, alpha = 1, x = 1, y = 150, ysize = 125, color = "orange
 add_phylopic(Basidomycota, alpha = 1, x = 2, y = 150, ysize = 160, color = "red") +
   ylim(0,600) +
   ylab("") +
-  ggtitle("Observation of Each Phylum by Kingdom")+
-  theme(plot.title= element_text(hjust = 1))+
   scale_fill_manual(values = c("orange", "red"))+
   theme(legend.position='none')
 

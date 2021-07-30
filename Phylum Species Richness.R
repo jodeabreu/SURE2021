@@ -18,9 +18,7 @@ species.richness<- ggplot(phylum_sp_summ) +
   add_phylopic(Arthropods, alpha = 1, x = 1, y = 140, ysize = 25, color = "yellow")+
   add_phylopic(Chordata, alpha = 1, x = 5, y = 105, ysize = 10, color = "red")+
   add_phylopic(Mollusca, alpha = 1, x = 6, y = 25, ysize = 25, color = "blue")+ 
-  ylim(0,180) +
-  ggtitle("Species Richness")+
-  theme(plot.title= element_text(hjust = .5))
+  ylim(0,180) 
 species.richness
 
 ggsave("Species.richness.png", height= 5, width= 8, dpi = 400)

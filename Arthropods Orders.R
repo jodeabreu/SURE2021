@@ -9,8 +9,9 @@ keys <- lapply(stonehill$scientific_name, function(x) name_backbone(name=x))
 taxonomy <- bind_rows(keys)
 stonehill_tax = bind_cols(stonehill, taxonomy)
 
- ggplot(stonehill_tax %>% filter(quality_grade != 'needs_id') %>% filter(phylum== "Arthropoda"))+
+ Arthropod.Orders= ggplot(stonehill_tax %>% filter(quality_grade != 'needs_id') %>% filter(phylum== "Arthropoda"))+
   geom_bar(aes(x=order)) +
+   theme_light()+
   facet_wrap(~kingdom, scales='free_x') +
  theme(axis.text.x= element_text(angle=50, vjust= 1, hjust=1.2 )) +
  add_phylopic(Lepidoptera, alpha= 1, x=10, y=105, ysize=10, color = "black") +
@@ -24,7 +25,7 @@ add_phylopic(Hemiptera, alpha= 1, x=6, y=20, ysize=15, color = "black")+
   ggtitle("Arthropods")+
   theme(plot.title= element_text(hjust = .5))
 
-ggsave("Arthropod_Orders.png", height= 5, width= 8, dpi = 400)
+ggsave("Arthropod.Orders.png", height= 5, width= 8, dpi = 400)
 
 Diptera <- image_data("f538aa99-5c08-4f96-97d9-2e094ef5d84f", size= 64) [[1]]
 Lepidoptera <- image_data("c224abfd-ee39-4923-98e5-c2606dcc56cb", size= 64)[[1]]
